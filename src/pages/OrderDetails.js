@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-import Title from "../../components/Title"
-import Text from "../../components/Text"
-
-import {
-  getOrderById,
-} from "../../services/orders"
+import Title from "../components/ui/title"
+import Text from "../components/ui/subtitle"
+import { getOrderById } from "../services/orders"
 
 import {
   orderDetailsStyles,

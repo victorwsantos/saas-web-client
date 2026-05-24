@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Title from "../../components/Title"
-import Text from "../../components/Text"
-
-import {
-  getClients,
-} from "../../services/clients"
+import Title from "../components/ui/title"
+import Text from "../components/ui/subtitle"
+import { getClients } from "../services/clients"
 
 export default function ClientsPage() {
   const [clients, setClients] = useState([])

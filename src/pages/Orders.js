@@ -1,16 +1,10 @@
 import { useEffect, useMemo, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Title from "../../components/Title"
-import Text from "../../components/Text"
-
-import {
-  getOrders,
-} from "../../services/orders"
-
-import {
-  orderPageStyles,
-} from "../../designSystem"
+import Title from "../components/ui/title"
+import Text from "../components/ui/subtitle"
+import { getOrders } from "../services/orders"
+import { orderPageStyles } from "../components/designSystem"
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([])
