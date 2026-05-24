@@ -132,3 +132,92 @@ export const navStyles = {
     transition
   `,
 }
+export const orderPageStyles = {
+  container: `
+    p-6
+  `,
+
+  headerTitle: `
+    text-3xl
+    font-bold
+  `,
+
+  filtersContainer: `
+    flex
+    gap-3
+    mt-4
+  `,
+
+  select: `
+    border
+    p-2
+    rounded
+  `,
+
+  list: `
+    mt-6
+    flex
+    flex-col
+    gap-3
+  `,
+
+  card: `
+    p-4
+    bg-white
+    border
+    rounded-xl
+    cursor-pointer
+    hover:bg-gray-50
+    transition
+  `,
+
+  orderTitle: `
+    text-lg
+    font-semibold
+  `,
+
+  text: `
+    text-gray-500
+  `,
+
+  status: `
+    text-sm
+    mt-1
+  `,
+}
+
+export const orderDetailsStyles = {
+  container: `
+    p-6
+  `,
+
+  title: `
+    text-3xl
+    font-bold
+  `,
+
+  text: `
+    mt-2
+  `,
+
+  price: `
+    mt-2
+    font-semibold
+  `,
+
+  imagesGrid: `
+    mt-6
+    grid
+    grid-cols-1
+    md:grid-cols-3
+    gap-4
+  `,
+
+  image: `
+    w-full
+    h-48
+    object-cover
+    rounded-xl
+    border
+  `,
+}
