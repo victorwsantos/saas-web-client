@@ -28,7 +28,7 @@ export default function AppRoutes() {
           path="/"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <h1>teste</h1>
             </ProtectedRoute>
           }
         />
