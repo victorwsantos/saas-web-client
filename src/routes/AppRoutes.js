@@ -7,12 +7,13 @@ import {
 import ProtectedRoute from "./ProtectedRoute"
 
 import Login from "../pages/Login"
-import Dashboard from "../pages/Dashboard"
-import Clients from "../pages/Clientes"
-import ClientDetails from "../pages/ClientsDetails"
+import Clients from "../pages/Clients"
+import ClientDetails from "../pages/ClientDetails"
 import Orders from "../pages/Orders"
 import OrderDetails from "../pages/OrderDetails"
 import Search from "../pages/Search"
+
+import Dashboard from "../components/dashboard"
 
 export default function AppRoutes() {
   return (
