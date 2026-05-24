@@ -1,34 +1,35 @@
+// =========================
+// DASHBOARD
+// =========================
 export const dashboardStyles = {
   container: `
     min-h-screen
     bg-gray-100
-    p-8
+    p-6
   `,
 
-  headerContainer: `
-    mb-8
-  `,
-
-  title: `
-    text-4xl
+  headerTitle: `
+    text-3xl
     font-bold
     text-gray-900
   `,
 
-  subtitle: `
-    text-gray-500
-    mt-2
-  `,
-
-  cardsGrid: `
+  cardsContainer: `
     grid
     grid-cols-1
-    md:grid-cols-2
-    lg:grid-cols-3
-    gap-6
+    md:grid-cols-4
+    gap-4
+    mt-6
+  `,
+
+  ordersContainer: `
+    mt-10
   `,
 }
 
+// =========================
+// CARD
+// =========================
 export const cardStyles = {
   container: `
     bg-white
@@ -43,7 +44,7 @@ export const cardStyles = {
   `,
 
   title: `
-    text-2xl
+    text-xl
     font-bold
     text-gray-900
   `,
@@ -51,10 +52,11 @@ export const cardStyles = {
   description: `
     text-gray-500
     mt-2
+    text-sm
   `,
 
   badge: `
-    text-sm
+    text-xs
     text-blue-500
     mt-2
     font-medium
@@ -66,13 +68,16 @@ export const cardStyles = {
     hover:bg-blue-600
     transition
     text-white
-    py-3
+    py-2
     px-4
     rounded-xl
     w-full
   `,
 }
 
+// =========================
+// NAVBAR
+// =========================
 export const navStyles = {
   container: `
     w-full
@@ -132,6 +137,10 @@ export const navStyles = {
     transition
   `,
 }
+
+// =========================
+// ORDERS PAGE
+// =========================
 export const orderPageStyles = {
   container: `
     p-6
@@ -186,29 +195,9 @@ export const orderPageStyles = {
   `,
 }
 
-
-export const dashboardStyles = {
-  container: `
-    p-6
-  `,
-
-  cardsContainer: `
-    grid
-    grid-cols-1
-    md:grid-cols-4
-    gap-4
-  `,
-
-  ordersContainer: `
-    mt-10
-  `,
-
-  title: `
-    text-3xl
-    font-bold
-  `,
-}
-
+// =========================
+// SEARCH PAGE
+// =========================
 export const searchStyles = {
   container: `
     p-6
@@ -221,6 +210,8 @@ export const searchStyles = {
     p-3
     mb-6
     outline-none
+    focus:ring-2
+    focus:ring-blue-200
   `,
 
   resultList: `
@@ -236,6 +227,7 @@ export const searchStyles = {
     bg-white
     cursor-pointer
     hover:bg-gray-50
+    transition
   `,
 
   title: `
