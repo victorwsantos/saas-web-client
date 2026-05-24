@@ -1,3 +1,6 @@
+import Card from "./ui/card"
+import OrderList from "./orderList"
+
 export default function Dashboard(props) {
   return (
     <div>
@@ -11,7 +14,7 @@ export default function Dashboard(props) {
         ))}
      </div>
 
-      <OrdersList
+      <OrderList
         orders={props.orders}
       />
    </div>

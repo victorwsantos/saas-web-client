@@ -8,7 +8,7 @@ export async function getOrders() {
 }
 
 export async function getOrderById(id) {
-  const res = await fetch(`${APid}`)
+  const res = await fetch(`${API}/id`)
   if (!res.ok) throw new Error("Order not found")
 
   return res.json()

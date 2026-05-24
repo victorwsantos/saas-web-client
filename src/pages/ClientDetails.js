@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 import Title from "../components/ui/title"
-import Text from "../components/ui/subtítulos"
+import Text from "../components/ui/subtitle"
 import OrdersList from "../components/orderList"
 
 import {

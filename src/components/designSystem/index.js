@@ -241,49 +241,95 @@ export const searchStyles = {
   `,
 }
 
+// =========================
+// ORDER DETAILS
+// =========================
 export const orderDetailsStyles = {
-    container: `
-        p-6
-            flex
-                flex-col
-                    gap-4
-                        bg-gray-100
-                            min-h-screen
-                              `,
+  container: `
+    p-6
+    flex
+    flex-col
+    gap-4
+    bg-gray-100
+    min-h-screen
+  `,
 
-                                title: `
-                                    text-3xl
-                                        font-bold
-                                            text-gray-900
-                                              `,
+  title: `
+    text-3xl
+    font-bold
+    text-gray-900
+  `,
 
-                                                text: `
-                                                    text-gray-600
-                                                        text-base
-                                                          `,
+  text: `
+    text-gray-600
+    text-base
+  `,
 
-                                                            price: `
-                                                                text-2xl
-                                                                    font-bold
-                                                                        text-green-600
-                                                                            mt-2
-                                                                              `,
+  price: `
+    text-2xl
+    font-bold
+    text-green-600
+    mt-2
+  `,
 
-                                                                                imagesGrid: `
-                                                                                    mt-6
-                                                                                        grid
-                                                                                            grid-cols-1
-                                                                                                md:grid-cols-2
-                                                                                                    lg:grid-cols-3
-                                                                                                        gap-4
-                                                                                                          `,
+  imagesGrid: `
+    mt-6
+    grid
+    grid-cols-1
+    md:grid-cols-2
+    lg:grid-cols-3
+    gap-4
+  `,
 
-                                                                                                            image: `
-                                                                                                                w-full
-                                                                                                                    h-64
-                                                                                                                        object-cover
-                                                                                                                            rounded-2xl
-                                                                                                                                shadow-md
-                                                                                                                                    bg-white
-                                                                                                                                      `,
-                                                                                                                                      }
+  image: `
+    w-full
+    h-64
+    object-cover
+    rounded-2xl
+    shadow-md
+    bg-white
+  `,
+}
+
+// =========================
+// ORDER LIST
+// =========================
+export const orderListStyles = {
+  container: `
+    flex
+    flex-col
+    gap-4
+    mt-6
+  `,
+
+  card: `
+    bg-white
+    border
+    border-gray-100
+    rounded-2xl
+    p-4
+    shadow-sm
+    hover:shadow-md
+    transition
+    cursor-pointer
+  `,
+
+  title: `
+    text-lg
+    font-semibold
+    text-gray-900
+  `,
+
+  description: `
+    text-sm
+    text-gray-500
+    mt-1
+  `,
+
+  status: `
+    text-sm
+    font-medium
+    mt-2
+    text-blue-600
+  `,
+}
