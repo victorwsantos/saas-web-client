@@ -4,88 +4,88 @@ import {
   Route,
 } from "react-router-dom"
 
-import ProtectedRoute from "..ut..otectedRoute"
+import ProtectedRoute from "./ProtectedRoute"
 
-import Login from "..g..gin"
-import Dashboard from "..g..shboard"
-import Clients from "..g..ientes"
-import ClientDetails from "..g..ientsDetails"
-import Orders from "..g..ders"
-import OrderDetails from "..g..derDetails"
-import Search from "..g..arch"
+import Login from "../pages/Login"
+import Dashboard from "../pages/Dashboard"
+import Clients from "../pages/Clientes"
+import ClientDetails from "../pages/ClientsDetails"
+import Orders from "../pages/Orders"
+import OrderDetails from "../pages/OrderDetails"
+import Search from "../pages/Search"
 
 export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route
-          path..gin"
-          element={<Logi..
+          path="/login"
+          element={<Login />}
         />
+
         <Route
           path="/"
           element={
             <ProtectedRoute>
               <Dashboard />
-           ..otectedRoute>
+            </ProtectedRoute>
           }
         />
 
         <Route
-          path..shboard"
+          path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
-           ..otectedRoute>
+            </ProtectedRoute>
           }
         />
 
         <Route
-          path..ients"
+          path="/clients"
           element={
             <ProtectedRoute>
               <Clients />
-           ..otectedRoute>
+            </ProtectedRoute>
           }
         />
 
         <Route
-          path..ien..d"
+          path="/clients/:id"
           element={
             <ProtectedRoute>
               <ClientDetails />
-           ..otectedRoute>
+            </ProtectedRoute>
           }
         />
 
         <Route
-          path..ders"
+          path="/orders"
           element={
             <ProtectedRoute>
               <Orders />
-           ..otectedRoute>
+            </ProtectedRoute>
           }
         />
 
         <Route
-          path..de..d"
+          path="/orders/:id"
           element={
             <ProtectedRoute>
               <OrderDetails />
-           ..otectedRoute>
+            </ProtectedRoute>
           }
         />
 
         <Route
-          path..arch"
+          path="/search"
           element={
             <ProtectedRoute>
               <Search />
-           ..otectedRoute>
+            </ProtectedRoute>
           }
         />
-
-     ..utes>
-   ..owserRouter>
+      </Routes>
+    </BrowserRouter>
   )
 }

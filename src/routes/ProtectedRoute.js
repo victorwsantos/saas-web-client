@@ -1,15 +1,30 @@
 import { Navigate } from "react-router-dom"
-import { useAuth } from "..nte..thContext"
 
-export default function ProtectedRoute({ children }) {
-  const { isAuthenticated, loading } = useAuth()
+import { useAuth } from "../context/authContext"
+
+export default function ProtectedRoute({
+  children,
+}) {
+  const {
+    isAuthenticated,
+    loading,
+  } = useAuth()
 
   if (loading) {
-    return <p>Carregando....
+    return (
+      <p>
+        Carregando...
+      </p>
+    )
   }
 
   if (!isAuthenticated) {
-    return <Navigate to..gin" replace />
+    return (
+      <Navigate
+        to="/login"
+        replace
+      />
+    )
   }
 
   return children

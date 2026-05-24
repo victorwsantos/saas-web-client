@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Title from "..mponen../title"
-import Text from "..mponen../subtitle"
-import { getOrders } from "..rvic..ders"
-import { orderPageStyles } from "..mponen..mponen..signSystem"
+import Title from "../components/ui/title"
+import Text from "../components/ui/subtitle"
+
+import { getOrders } from "../services/orders"
+
+import { orderPageStyles } from "../components/designSystem"
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([])
@@ -14,12 +16,12 @@ export default function OrdersPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    async function load() {
+    async function loadOrders() {
       const data = await getOrders()
       setOrders(data)
     }
 
-    load()
+    loadOrders()
   }, [])
 
   const filteredOrders = useMemo(() => {
@@ -27,17 +29,17 @@ export default function OrdersPage() {
 
     if (statusFilter !== "all") {
       result = result.filter(
-        (o) => o.status === statusFilter
+        (order) => order.status === statusFilter
       )
     }
 
     result.sort((a, b) => {
-      const aDate = new Date(a.createdAt)
-      const bDate = new Date(b.createdAt)
+      const firstDate = new Date(a.createdAt)
+      const secondDate = new Date(b.createdAt)
 
       return sort === "desc"
-        ? bDate - aDate
-        : aDate - bDate
+        ? secondDate - firstDate
+        : firstDate - secondDate
     })
 
     return result
@@ -50,7 +52,6 @@ export default function OrdersPage() {
         text="Ordens de Serviço"
       />
 
-     ..FILTERS */}
       <div className={orderPageStyles.filtersContainer}>
         <select
           className={orderPageStyles.select}
@@ -59,11 +60,22 @@ export default function OrdersPage() {
             setStatusFilter(e.target.value)
           }
         >
-          <option value="all">Toda..tion>
-          <option value="approved">Aprovada..tion>
-          <option value="pending">Pendente..tion>
-          <option value="finished">Finalizada..tion>
-       ..lect>
+          <option value="all">
+            Todas
+          </option>
+
+          <option value="approved">
+            Aprovadas
+          </option>
+
+          <option value="pending">
+            Pendentes
+          </option>
+
+          <option value="finished">
+            Finalizadas
+          </option>
+        </select>
 
         <select
           className={orderPageStyles.select}
@@ -72,19 +84,23 @@ export default function OrdersPage() {
             setSort(e.target.value)
           }
         >
-          <option value="desc">Mais recente..tion>
-          <option value="asc">Mais antiga..tion>
-       ..lect>
-     ..v>
+          <option value="desc">
+            Mais recentes
+          </option>
 
-     ..LIST */}
+          <option value="asc">
+            Mais antigas
+          </option>
+        </select>
+      </div>
+
       <div className={orderPageStyles.list}>
         {filteredOrders.map((order) => (
           <div
             key={order.id}
             className={orderPageStyles.card}
             onClick={() =>
-              navigate..de..order.id}`)
+              navigate(`/orders/${order.id}`)
             }
           >
             <Title
@@ -101,9 +117,9 @@ export default function OrdersPage() {
               className={orderPageStyles.status}
               text={`Status: ${order.status}`}
             />
-         ..v>
+          </div>
         ))}
-     ..v>
-   ..v>
+      </div>
+    </div>
   )
 }

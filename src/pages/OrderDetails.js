@@ -1,32 +1,38 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-import Title from "..mponen../title"
-import Text from "..mponen../subtitle"
-import { getOrderById } from "..rvic..ders"
+import Title from "../components/ui/title"
+import Text from "../components/ui/subtitle"
+
+import { getOrderById } from "../services/orders"
 
 import {
   orderDetailsStyles,
-} from "..mponen..mponen..signSystem"
+} from "../components/designSystem"
 
 export default function OrderDetailsPage() {
   const { id } = useParams()
+
   const [order, setOrder] = useState(null)
 
   useEffect(() => {
-    async function load() {
+    async function loadOrder() {
       const data = await getOrderById(id)
+
       setOrder(data)
     }
 
-    load()
+    loadOrder()
   }, [id])
 
   if (!order) {
     return (
       <div className={orderDetailsStyles.container}>
-        <Text text="Carregando..." />
-     ..v>
+        <Text
+          className={orderDetailsStyles.text}
+          text="Carregando..."
+        />
+      </div>
     )
   }
 
@@ -57,17 +63,16 @@ export default function OrderDetailsPage() {
         text={`Valor: R$ ${order.price}`}
       />
 
-     ..IMAGES (S3 URLs) */}
       <div className={orderDetailsStyles.imagesGrid}>
         {order.images?.map((url, index) => (
           <img
             key={index}
             src={url}
+            alt="Serviço"
             className={orderDetailsStyles.image}
-            alt="serviço"
           />
         ))}
-     ..v>
-   ..v>
+      </div>
+    </div>
   )
 }

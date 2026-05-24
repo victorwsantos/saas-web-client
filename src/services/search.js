@@ -1,4 +1,4 @@
-const API =..i/search"
+const API =".i/search"
 
 export async function searchRequest(query) {
   const res = await fetch(

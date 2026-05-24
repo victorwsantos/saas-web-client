@@ -1,4 +1,4 @@
-const API =..i/orders"
+const API =".i/orders"
 
 export async function getOrders() {
   const res = await fetch(API)
@@ -8,7 +8,7 @@ export async function getOrders() {
 }
 
 export async function getOrderById(id) {
-  const res = await fetch(`${AP..id}`)
+  const res = await fetch(`${APid}`)
   if (!res.ok) throw new Error("Order not found")
 
   return res.json()

@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Title from "..mponen../title"
-import Text from "..mponen../subtitle"
-import { searchRequest } from "..rvic..arch"
+import Title from "../components/ui/title"
+import Text from "../components/ui/subtitle"
+
+import { searchRequest } from "../services/search"
 
 import {
   searchStyles,
-} from "..mponen..mponen..signSystem"
+} from "../components/designSystem"
 
 export default function SearchPage() {
   const [query, setQuery] = useState("")
@@ -17,13 +18,14 @@ export default function SearchPage() {
   const navigate = useNavigate()
 
   async function handleSearch() {
-    if (!query) return
+    if (!query.trim()) {
+      return
+    }
 
     setLoading(true)
 
     try {
-      const data =
-        await searchRequest(query)
+      const data = await searchRequest(query)
 
       setResults(data)
     } catch (err) {
@@ -40,13 +42,14 @@ export default function SearchPage() {
   }
 
   function goToItem(item) {
-  ..adaptável ao seu backend
+    // Adaptável ao backend
+
     if (item.type === "client") {
-      navigate..ien..item.id}`)
+      navigate(`/clients/${item.id}`)
     }
 
     if (item.type === "order") {
-      navigate..de..item.id}`)
+      navigate(`/orders/${item.id}`)
     }
   }
 
@@ -59,7 +62,10 @@ export default function SearchPage() {
 
       <input
         className={searchStyles.input}
-        placeholder="Buscar cliente, ordem ou serviço..."
+        placeholder="
+          Buscar cliente,
+          ordem ou serviço...
+        "
         value={query}
         onChange={(e) =>
           setQuery(e.target.value)
@@ -68,7 +74,10 @@ export default function SearchPage() {
       />
 
       {loading && (
-        <Text text="Buscando..." />
+        <Text
+          className="text-gray-500"
+          text="Buscando..."
+        />
       )}
 
       <div className={searchStyles.resultList}>
@@ -87,9 +96,9 @@ export default function SearchPage() {
               className={searchStyles.subtitle}
               text={item.subtitle}
             />
-         ..v>
+          </div>
         ))}
-     ..v>
-   ..v>
+      </div>
+    </div>
   )
 }

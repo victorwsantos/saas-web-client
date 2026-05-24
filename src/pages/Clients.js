@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Title from "..mponen../title"
-import Text from "..mponen../subtitle"
-import { getClients } from "..rvic..ients"
+import Title from "../components/ui/title"
+import Text from "../components/ui/subtitle"
+
+import { getClients } from "../services/clients"
 
 export default function ClientsPage() {
   const [clients, setClients] = useState([])
+
   const navigate = useNavigate()
 
   useEffect(() => {
-    async function load() {
+    async function loadClients() {
       const data = await getClients()
       setClients(data)
     }
 
-    load()
+    loadClients()
   }, [])
 
   return (
@@ -41,9 +43,10 @@ export default function ClientsPage() {
               rounded-xl
               cursor-pointer
               hover:bg-gray-50
+              transition
             "
             onClick={() =>
-              navigate..ien..client.id}`)
+              navigate(`/clients/${client.id}`)
             }
           >
             <Title
@@ -55,9 +58,9 @@ export default function ClientsPage() {
               className="text-gray-500"
               text={client.phone}
             />
-         ..v>
+          </div>
         ))}
-     ..v>
-   ..v>
+      </div>
+    </div>
   )
 }

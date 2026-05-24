@@ -1,9 +1,9 @@
 import { useState } from "react"
 
-import Input from ..put"
-import ActionButton from ..tionButton"
-import Text from../subtitle"
-import Title from../title"
+import Input from "./input"
+import ActionButton from "./button"
+import Text from "./subtitle"
+import Title from "./title"
 
 export default function Form(props) {
   const [formData, setFormData] = useState({})
@@ -71,13 +71,13 @@ export default function Form(props) {
 
       <div className="flex flex-col gap-4">
         {props.elements.map(renderElement)}
-     ..v>
+     </div>
 
       <ActionButton
         type="submit"
         text={props.submitText || "Enviar"}
         className={props.submitButtonClassName}
       />
-   ..rm>
+   </form>
   )
 }

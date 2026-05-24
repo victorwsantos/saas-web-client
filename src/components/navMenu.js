@@ -1,15 +1,16 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
-import { navStyles } from "..mponen..mponen..signSystem"
+import { navStyles } from "./designSystem"
 
 export default function NavMenu(props) {
   const navigate = useNavigate()
+
   const [search, setSearch] = useState("")
 
   function handleSearch(e) {
     if (e.key === "Enter") {
-      navigate..arch?q=${search}`)
+      navigate(`/search?q=${search}`)
     }
   }
 
@@ -19,62 +20,62 @@ export default function NavMenu(props) {
     }
 
     localStorage.removeItem("token")
-    navigate..gin")
+
+    navigate("/login")
   }
 
   return (
     <nav className={navStyles.container}>
-     ..LEFT MENU */}
       <div className={navStyles.left}>
         <span
           className={navStyles.link}
-          onClick={() => navigate..shboard")}
+          onClick={() => navigate("/dashboard")}
         >
           Home
-       ..an>
+        </span>
 
         <span
           className={navStyles.link}
-          onClick={() => navigate..arch")}
+          onClick={() => navigate("/search")}
         >
           Pesquisa
-       ..an>
+        </span>
 
         <span
           className={navStyles.link}
-          onClick={() => navigate..ients")}
+          onClick={() => navigate("/clients")}
         >
           Clientes
-       ..an>
+        </span>
 
         <span
           className={navStyles.link}
-          onClick={() => navigate..ders")}
+          onClick={() => navigate("/orders")}
         >
           Ordens de Serviço
-       ..an>
-     ..v>
+        </span>
+      </div>
 
-     ..SEARCH */}
       <div>
         <input
           className={navStyles.searchInput}
           placeholder="Pesquisar..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) =>
+            setSearch(e.target.value)
+          }
           onKeyDown={handleSearch}
         />
-     ..v>
+      </div>
 
-     ..RIGHT */}
       <div className={navStyles.right}>
         <button
           className={navStyles.signOut}
           onClick={signOut}
         >
           Sair
-       ..tton>
-     ..v>
-   ..v>
+        </button>
+      </div>
+    </nav>
   )
 }
