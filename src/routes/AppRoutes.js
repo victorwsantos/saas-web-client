@@ -12,8 +12,7 @@ import ClientDetails from "../pages/ClientDetails"
 import Orders from "../pages/Orders"
 import OrderDetails from "../pages/OrderDetails"
 import Search from "../pages/Search"
-
-import Dashboard from "../components/dashboard"
+import MainPage from "../pages/MainPage"
 
 export default function AppRoutes() {
   return (
@@ -28,7 +27,7 @@ export default function AppRoutes() {
           path="/"
           element={
             <ProtectedRoute>
-              <h1>teste</h1>
+              <MainPage />
             </ProtectedRoute>
           }
         />
@@ -37,7 +36,7 @@ export default function AppRoutes() {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <MainPage />
             </ProtectedRoute>
           }
         />
