@@ -1,6 +1,6 @@
-import Title from "./Title"
-import Text from "./Text"
-import ActionButton from "./ActionButton"
+import Title from../title"
+import Text from../subtitle"
+import ActionButton from ..tionButton"
 
 export default function Card(props) {
   return (
@@ -10,7 +10,7 @@ export default function Card(props) {
           className={props.titleClassName}
           text={props.title}
         />
-      </div>
+     ..v>
 
       <div>
         <Text
@@ -24,7 +24,7 @@ export default function Card(props) {
             text={props.badgeText}
           />
         )}
-      </div>
+     ..v>
 
       <div>
         <ActionButton
@@ -33,7 +33,7 @@ export default function Card(props) {
           onClick={props.onClick}
           text={props.buttonText}
         />
-      </div>
-    </div>
+     ..v>
+   ..v>
   )
 }

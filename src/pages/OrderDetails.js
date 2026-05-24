@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-import Title from "../components/ui/title"
-import Text from "../components/ui/subtitle"
-import { getOrderById } from "../services/orders"
+import Title from "..mponen../title"
+import Text from "..mponen../subtitle"
+import { getOrderById } from "..rvic..ders"
 
 import {
   orderDetailsStyles,
-} from "../../designSystem"
+} from "..mponen..mponen..signSystem"
 
 export default function OrderDetailsPage() {
   const { id } = useParams()
@@ -26,7 +26,7 @@ export default function OrderDetailsPage() {
     return (
       <div className={orderDetailsStyles.container}>
         <Text text="Carregando..." />
-      </div>
+     ..v>
     )
   }
 
@@ -57,7 +57,7 @@ export default function OrderDetailsPage() {
         text={`Valor: R$ ${order.price}`}
       />
 
-      {/* IMAGES (S3 URLs) */}
+     ..IMAGES (S3 URLs) */}
       <div className={orderDetailsStyles.imagesGrid}>
         {order.images?.map((url, index) => (
           <img
@@ -67,7 +67,7 @@ export default function OrderDetailsPage() {
             alt="serviço"
           />
         ))}
-      </div>
-    </div>
+     ..v>
+   ..v>
   )
 }

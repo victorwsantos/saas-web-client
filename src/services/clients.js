@@ -1,4 +1,4 @@
-const API = "/api/clients"
+const API =..i/clients"
 
 export async function getClients() {
   const res = await fetch(API)
@@ -8,7 +8,7 @@ export async function getClients() {
       }
 
       export async function getClientById(id) {
-        const res = await fetch(`${API}/${id}`)
+        const res = await fetch(`${AP..id}`)
           if (!res.ok) throw new Error("Client not found")
 
             return res.json()

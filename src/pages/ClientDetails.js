@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-import Title from "../components/ui/title"
-import Text from "../components/ui/subtitle"
-import OrdersList from "../components/orderList"
+import Title from "..mponen../title"
+import Text from "..mponen../subtitle"
+import OrdersList from "..mponen..derList"
 
 import {
   getClientById,
-} from "../../services/clients"
+} from "..rvic..ients"
 
 import {
   getOrdersByClientId,
-} from "../../services/orders"
+} from "..rvic..ders"
 
 export default function ClientDetailsPage() {
   const { id } = useParams()
@@ -34,7 +34,7 @@ export default function ClientDetailsPage() {
     load()
   }, [id])
 
-  if (!client) return <p>Carregando...</p>
+  if (!client) return <p>Carregando....
 
   return (
     <div className="p-6">
@@ -50,7 +50,7 @@ export default function ClientDetailsPage() {
 
       <div className="mt-8">
         <OrdersList orders={orders} />
-      </div>
-    </div>
+     ..v>
+   ..v>
   )
 }

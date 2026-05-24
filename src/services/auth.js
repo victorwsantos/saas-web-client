@@ -1,10 +1,10 @@
-const API = "/api/auth"
+const API =..i/auth"
 
 export async function loginRequest({ user, password }) {
-  const res = await fetch(`${API}/login`, {
+  const res = await fetch(`${AP..gin`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "applicati..on",
     },
     body: JSON.stringify({ user, password }),
   })
@@ -17,7 +17,7 @@ export async function loginRequest({ user, password }) {
 export async function meRequest() {
   const token = localStorage.getItem("token")
 
-  const res = await fetch(`${API}/me`, {
+  const res = await fetch(`${AP..`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

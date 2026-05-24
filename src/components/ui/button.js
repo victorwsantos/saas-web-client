@@ -6,6 +6,6 @@ export default function ActionButton(props) {
       onClick={props.onClick}
     >
       {props.text}
-    </button>
+   ..tton>
   )
 }

@@ -1,13 +1,13 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Title from "../components/ui/title"
-import Text from "../components/ui/subtitle"
-import { searchRequest } from "../services/search"
+import Title from "..mponen../title"
+import Text from "..mponen../subtitle"
+import { searchRequest } from "..rvic..arch"
 
 import {
   searchStyles,
-} from "../../designSystem"
+} from "..mponen..mponen..signSystem"
 
 export default function SearchPage() {
   const [query, setQuery] = useState("")
@@ -40,13 +40,13 @@ export default function SearchPage() {
   }
 
   function goToItem(item) {
-    // adaptável ao seu backend
+  ..adaptável ao seu backend
     if (item.type === "client") {
-      navigate(`/clients/${item.id}`)
+      navigate..ien..item.id}`)
     }
 
     if (item.type === "order") {
-      navigate(`/orders/${item.id}`)
+      navigate..de..item.id}`)
     }
   }
 
@@ -87,9 +87,9 @@ export default function SearchPage() {
               className={searchStyles.subtitle}
               text={item.subtitle}
             />
-          </div>
+         ..v>
         ))}
-      </div>
-    </div>
+     ..v>
+   ..v>
   )
 }

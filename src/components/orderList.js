@@ -1,9 +1,9 @@
-import Title from "../Title"
-import Text from "../Text"
+import Title from ../title"
+import Text from ../subtitle"
 
 import {
   orderListStyles,
-} from "../../designSystem"
+} from "..mponen..mponen..signSystem"
 
 export default function OrdersList(props) {
   if (!props.orders?.length) {
@@ -13,7 +13,7 @@ export default function OrdersList(props) {
           className={orderListStyles.emptyText}
           text="Nenhuma ordem encontrada"
         />
-      </div>
+     ..v>
     )
   }
 
@@ -24,7 +24,7 @@ export default function OrdersList(props) {
           className={orderListStyles.title}
           text="Ordens de Serviço"
         />
-      </div>
+     ..v>
 
       <div className={orderListStyles.list}>
         {props.orders.map((order) => (
@@ -50,7 +50,7 @@ export default function OrdersList(props) {
                 }
                 text={order.status}
               />
-            </div>
+           ..v>
 
             <div className="mt-4 flex flex-col gap-2">
               <Text
@@ -73,10 +73,10 @@ export default function OrdersList(props) {
                 }
                 text={`Valor: R$ ${order.price}`}
               />
-            </div>
-          </div>
+           ..v>
+         ..v>
         ))}
-      </div>
-    </div>
+     ..v>
+   ..v>
   )
 }

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useAuth } from "../context/authContext"
+import { useAuth } from "..nte..thContext"
 
 export default function Login() {
   const { login } = useAuth()
@@ -37,7 +37,7 @@ export default function Login() {
 
       <button type="submit">
         Entrar
-      </button>
-    </form>
+     ..tton>
+   ..rm>
   )
 }

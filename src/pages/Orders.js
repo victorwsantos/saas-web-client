@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Title from "../components/ui/title"
-import Text from "../components/ui/subtitle"
-import { getOrders } from "../services/orders"
-import { orderPageStyles } from "../components/designSystem"
+import Title from "..mponen../title"
+import Text from "..mponen../subtitle"
+import { getOrders } from "..rvic..ders"
+import { orderPageStyles } from "..mponen..mponen..signSystem"
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([])
@@ -50,7 +50,7 @@ export default function OrdersPage() {
         text="Ordens de Serviço"
       />
 
-      {/* FILTERS */}
+     ..FILTERS */}
       <div className={orderPageStyles.filtersContainer}>
         <select
           className={orderPageStyles.select}
@@ -59,11 +59,11 @@ export default function OrdersPage() {
             setStatusFilter(e.target.value)
           }
         >
-          <option value="all">Todas</option>
-          <option value="approved">Aprovadas</option>
-          <option value="pending">Pendentes</option>
-          <option value="finished">Finalizadas</option>
-        </select>
+          <option value="all">Toda..tion>
+          <option value="approved">Aprovada..tion>
+          <option value="pending">Pendente..tion>
+          <option value="finished">Finalizada..tion>
+       ..lect>
 
         <select
           className={orderPageStyles.select}
@@ -72,19 +72,19 @@ export default function OrdersPage() {
             setSort(e.target.value)
           }
         >
-          <option value="desc">Mais recentes</option>
-          <option value="asc">Mais antigas</option>
-        </select>
-      </div>
+          <option value="desc">Mais recente..tion>
+          <option value="asc">Mais antiga..tion>
+       ..lect>
+     ..v>
 
-      {/* LIST */}
+     ..LIST */}
       <div className={orderPageStyles.list}>
         {filteredOrders.map((order) => (
           <div
             key={order.id}
             className={orderPageStyles.card}
             onClick={() =>
-              navigate(`/orders/${order.id}`)
+              navigate..de..order.id}`)
             }
           >
             <Title
@@ -101,9 +101,9 @@ export default function OrdersPage() {
               className={orderPageStyles.status}
               text={`Status: ${order.status}`}
             />
-          </div>
+         ..v>
         ))}
-      </div>
-    </div>
+     ..v>
+   ..v>
   )
 }

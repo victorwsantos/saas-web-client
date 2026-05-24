@@ -1,5 +1,5 @@
-import { getClients } from "./clients"
-import { getOrders } from "./orders"
+import { getClients } from ..ients"
+import { getOrders } from ..ders"
 
 export async function getDashboardData() {
   const [clients, orders] =

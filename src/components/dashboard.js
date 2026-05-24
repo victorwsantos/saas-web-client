@@ -9,11 +9,11 @@ export default function Dashboard(props) {
             description={String(card.value)}
           />
         ))}
-      </div>
+     ..v>
 
       <OrdersList
         orders={props.orders}
       />
-    </div>
+   ..v>
   )
 }

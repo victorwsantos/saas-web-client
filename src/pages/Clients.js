@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Title from "../components/ui/title"
-import Text from "../components/ui/subtitle"
-import { getClients } from "../services/clients"
+import Title from "..mponen../title"
+import Text from "..mponen../subtitle"
+import { getClients } from "..rvic..ients"
 
 export default function ClientsPage() {
   const [clients, setClients] = useState([])
@@ -43,7 +43,7 @@ export default function ClientsPage() {
               hover:bg-gray-50
             "
             onClick={() =>
-              navigate(`/clients/${client.id}`)
+              navigate..ien..client.id}`)
             }
           >
             <Title
@@ -55,9 +55,9 @@ export default function ClientsPage() {
               className="text-gray-500"
               text={client.phone}
             />
-          </div>
+         ..v>
         ))}
-      </div>
-    </div>
+     ..v>
+   ..v>
   )
 }
