@@ -240,3 +240,51 @@ export const searchStyles = {
     text-gray-500
   `,
 }
+
+export const orderDetailsStyles = {
+    container: `
+        p-6
+            flex
+                flex-col
+                    gap-4
+                        bg-gray-100
+                            min-h-screen
+                              `,
+
+                                title: `
+                                    text-3xl
+                                        font-bold
+                                            text-gray-900
+                                              `,
+
+                                                text: `
+                                                    text-gray-600
+                                                        text-base
+                                                          `,
+
+                                                            price: `
+                                                                text-2xl
+                                                                    font-bold
+                                                                        text-green-600
+                                                                            mt-2
+                                                                              `,
+
+                                                                                imagesGrid: `
+                                                                                    mt-6
+                                                                                        grid
+                                                                                            grid-cols-1
+                                                                                                md:grid-cols-2
+                                                                                                    lg:grid-cols-3
+                                                                                                        gap-4
+                                                                                                          `,
+
+                                                                                                            image: `
+                                                                                                                w-full
+                                                                                                                    h-64
+                                                                                                                        object-cover
+                                                                                                                            rounded-2xl
+                                                                                                                                shadow-md
+                                                                                                                                    bg-white
+                                                                                                                                      `,
+                                                                                                                                      }
+}
