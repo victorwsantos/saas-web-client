@@ -7,11 +7,15 @@ import {
 
 const AuthContext = createContext(null)
 
-export function AuthProvider({ children }) {
+export function AuthProvider({
+  children,
+}) {
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
 
-..INIT AUTH
+  const [loading, setLoading] =
+    useState(true)
+
+  // INIT AUTH
   useEffect(() => {
     const storedUser =
       localStorage.getItem("user")
@@ -26,25 +30,30 @@ export function AuthProvider({ children }) {
     setLoading(false)
   }, [])
 
-..LOGIN (user + password)
-  async function login({ user: username, password }) {
+  // LOGIN
+  async function login({
+    user: username,
+    password,
+  }) {
     try {
-    ..🔁 depois isso vira API real
-    ..const res = await fetch..i/login", ...)
-    ..const data = await res.json()
+      // depois isso vira API real
+      // const response = await fetch("/api/login")
 
       if (!username || !password) {
-        throw new Error("Credenciais inválidas")
+        throw new Error(
+          "Credenciais inválidas"
+        )
       }
 
-    ..mock simples
+      // MOCK
       const mockUser = {
         id: 1,
         user: username,
         role: "admin",
       }
 
-      const mockToken = "fake-token-123"
+      const mockToken =
+        "fake-token-123"
 
       localStorage.setItem(
         "user",
@@ -60,15 +69,21 @@ export function AuthProvider({ children }) {
 
       return mockUser
     } catch (err) {
-      console.error("Login error:", err)
+      console.error(
+        "Login error:",
+        err
+      )
+
       throw err
     }
   }
 
-..LOGOUT
+  // LOGOUT
   function logout() {
     localStorage.removeItem("user")
+
     localStorage.removeItem("token")
+
     setUser(null)
   }
 
@@ -83,11 +98,11 @@ export function AuthProvider({ children }) {
       }}
     >
       {children}
-   ..thContext.Provider>
+    </AuthContext.Provider>
   )
 }
 
-// hook
+// HOOK
 export function useAuth() {
   return useContext(AuthContext)
 }
