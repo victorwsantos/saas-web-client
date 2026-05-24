@@ -26,9 +26,7 @@ export default function AppRoutes() {
         <Route
           path="/"
           element={
-            <ProtectedRoute>
               <MainPage />
-            </ProtectedRoute>
           }
         />
 
