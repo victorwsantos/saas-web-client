@@ -18,14 +18,10 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* PUBLIC */}
         <Route
           path="/login"
           element={<Login />}
         />
-
-        {/* PROTECTED */}
         <Route
           path="/"
           element={

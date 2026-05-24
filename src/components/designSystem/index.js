@@ -186,38 +186,65 @@ export const orderPageStyles = {
   `,
 }
 
-export const orderDetailsStyles = {
+
+export const dashboardStyles = {
   container: `
     p-6
+  `,
+
+  cardsContainer: `
+    grid
+    grid-cols-1
+    md:grid-cols-4
+    gap-4
+  `,
+
+  ordersContainer: `
+    mt-10
   `,
 
   title: `
     text-3xl
     font-bold
   `,
+}
 
-  text: `
-    mt-2
+export const searchStyles = {
+  container: `
+    p-6
   `,
 
-  price: `
-    mt-2
-    font-semibold
-  `,
-
-  imagesGrid: `
-    mt-6
-    grid
-    grid-cols-1
-    md:grid-cols-3
-    gap-4
-  `,
-
-  image: `
+  input: `
     w-full
-    h-48
-    object-cover
-    rounded-xl
     border
+    rounded-lg
+    p-3
+    mb-6
+    outline-none
+  `,
+
+  resultList: `
+    flex
+    flex-col
+    gap-3
+  `,
+
+  card: `
+    p-4
+    border
+    rounded-xl
+    bg-white
+    cursor-pointer
+    hover:bg-gray-50
+  `,
+
+  title: `
+    font-semibold
+    text-lg
+  `,
+
+  subtitle: `
+    text-sm
+    text-gray-500
   `,
 }
