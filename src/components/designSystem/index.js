@@ -287,4 +287,3 @@ export const orderDetailsStyles = {
                                                                                                                                     bg-white
                                                                                                                                       `,
                                                                                                                                       }
-}
