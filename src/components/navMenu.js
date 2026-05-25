@@ -54,6 +54,12 @@ export default function NavMenu(props) {
         >
           Ordens de Serviço
         </span>
+        <span
+          className={navStyles.link}
+          onClick={() => navigate("/orders/create")}
+        >
+          Criar nova OS
+        </span>
       </div>
 
       <div>
