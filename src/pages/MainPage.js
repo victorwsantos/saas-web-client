@@ -32,7 +32,10 @@ export default function MainPage() {
           p-6
         "
       >
-        <Dashboard />
+        <Dashboard
+          cards={[]}
+            orders={[]}
+            />
       </main>
     </div>
   )
