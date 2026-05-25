@@ -92,7 +92,7 @@ export function AuthProvider({
       value={{
         user,
         loading,
-        isAuthenticated: false,
+        isAuthenticated: !!user,
         login,
         logout,
       }}

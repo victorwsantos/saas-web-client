@@ -26,13 +26,6 @@ export default function AppRoutes() {
         <Route
           path="/"
           element={
-              <MainPage />
-          }
-        />
-
-        <Route
-          path="/dashboard"
-          element={
             <ProtectedRoute>
               <MainPage />
             </ProtectedRoute>
