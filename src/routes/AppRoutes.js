@@ -6,6 +6,8 @@ import {
 
 import ProtectedRoute from "./ProtectedRoute"
 
+import Layout from "../pages/layout/Layout"
+
 import Login from "../pages/Login"
 import Clients from "../pages/Clients"
 import ClientDetails from "../pages/ClientDetails"
@@ -18,64 +20,52 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* LOGIN */}
         <Route
           path="/login"
           element={<Login />}
         />
 
+        {/* ROTAS PRIVADAS */}
         <Route
-          path="/"
           element={
             <ProtectedRoute>
-              <MainPage />
+              <Layout />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route
+            path="/"
+            element={<MainPage />}
+          />
 
-        <Route
-          path="/clients"
-          element={
-            <ProtectedRoute>
-              <Clients />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/clients"
+            element={<Clients />}
+          />
 
-        <Route
-          path="/clients/:id"
-          element={
-            <ProtectedRoute>
-              <ClientDetails />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/clients/:id"
+            element={<ClientDetails />}
+          />
 
-        <Route
-          path="/orders"
-          element={
-            <ProtectedRoute>
-              <Orders />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/orders"
+            element={<Orders />}
+          />
 
-        <Route
-          path="/orders/:id"
-          element={
-            <ProtectedRoute>
-              <OrderDetails />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/orders/:id"
+            element={<OrderDetails />}
+          />
 
-        <Route
-          path="/search"
-          element={
-            <ProtectedRoute>
-              <Search />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/search"
+            element={<Search />}
+          />
+        </Route>
+
       </Routes>
     </BrowserRouter>
   )
