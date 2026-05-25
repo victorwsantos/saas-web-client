@@ -78,13 +78,16 @@ export const cardStyles = {
 // =========================
 // NAVBAR
 // =========================
-export const navStyles = {
+ export const navStyles = {
   container: `
     w-full
     flex
-    items-center
-    justify-between
-    px-6
+    flex-col
+    md:flex-row
+    md:items-center
+    md:justify-between
+    gap-4
+    px-4
     py-4
     bg-white
     border-b
@@ -93,14 +96,14 @@ export const navStyles = {
 
   left: `
     flex
+    flex-wrap
     items-center
-    gap-6
+    gap-4
   `,
 
   right: `
     flex
     items-center
-    gap-4
   `,
 
   link: `
@@ -109,6 +112,8 @@ export const navStyles = {
     transition
     cursor-pointer
     font-medium
+    text-sm
+    md:text-base
   `,
 
   activeLink: `
@@ -117,6 +122,8 @@ export const navStyles = {
   `,
 
   searchInput: `
+    w-full
+    md:w-80
     border
     border-gray-200
     rounded-lg
@@ -128,6 +135,8 @@ export const navStyles = {
   `,
 
   signOut: `
+    w-full
+    md:w-auto
     bg-red-500
     hover:bg-red-600
     text-white
@@ -137,6 +146,7 @@ export const navStyles = {
     transition
   `,
 }
+
 
 // =========================
 // ORDERS PAGE
