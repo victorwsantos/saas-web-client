@@ -8,15 +8,19 @@ export default function MainPage() {
         min-h-screen
         bg-gray-100
         flex
+        flex-col
+        md:flex-row
       "
     >
       {/* SIDEBAR */}
       <aside
         className="
-          w-72
-          min-h-screen
+          w-full
+          md:w-72
           bg-white
-          border-r
+          border-b
+          md:border-b-0
+          md:border-r
           border-gray-200
           shadow-sm
         "
@@ -29,13 +33,14 @@ export default function MainPage() {
         className="
           flex-1
           overflow-y-auto
-          p-6
+          p-4
+          md:p-6
         "
       >
         <Dashboard
           cards={[]}
-            orders={[]}
-            />
+          orders={[]}
+        />
       </main>
     </div>
   )
