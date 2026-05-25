@@ -6,7 +6,7 @@ import {
 
 import ProtectedRoute from "./ProtectedRoute"
 
-import Layout from "../pages/layout/Layout"
+import Layout from "../pages/layout/layout"
 
 import Login from "../pages/Login"
 import Clients from "../pages/Clients"
