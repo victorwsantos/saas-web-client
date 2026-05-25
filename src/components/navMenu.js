@@ -29,7 +29,7 @@ export default function NavMenu(props) {
       <div className={navStyles.left}>
         <span
           className={navStyles.link}
-          onClick={() => navigate("/dashboard")}
+          onClick={() => navigate("/")}
         >
           Home
         </span>

@@ -15,6 +15,7 @@ import Orders from "../pages/Orders"
 import OrderDetails from "../pages/OrderDetails"
 import Search from "../pages/Search"
 import MainPage from "../pages/MainPage"
+import CreateOrder from "../pages/CreateOrder"
 
 export default function AppRoutes() {
   return (
@@ -58,6 +59,11 @@ export default function AppRoutes() {
           <Route
             path="/orders/:id"
             element={<OrderDetails />}
+          />
+
+          <Route
+            path="/orders/create"
+            element={<CreateOrder />}
           />
 
           <Route
