@@ -60,27 +60,12 @@ export default function NavMenu(props) {
         >
           Criar nova OS
         </span>
-      </div>
-
-      <div>
-        <input
-          className={navStyles.searchInput}
-          placeholder="Pesquisar..."
-          value={search}
-          onChange={(e) =>
-            setSearch(e.target.value)
-          }
-          onKeyDown={handleSearch}
-        />
-      </div>
-
-      <div className={navStyles.right}>
         <button
           className={navStyles.signOut}
-          onClick={signOut}
-        >
+          onClick={signOut}>
           Sair
         </button>
+
       </div>
     </nav>
   )
