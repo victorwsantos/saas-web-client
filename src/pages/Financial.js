@@ -1,4 +1,4 @@
-import Card from "../../components/card"
+import Card from "../../ui/components/card"
 
 import {
   dashboardStyles,
