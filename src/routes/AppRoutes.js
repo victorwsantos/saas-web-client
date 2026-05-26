@@ -71,12 +71,12 @@ export default function AppRoutes() {
             path="/search"
             element={<Search />}
           />
-        </Route>
-        <Route
+          <Route
             path="/financial"
             element={<Financial />}
           />
         </Route>
+        
 
       </Routes>
     </BrowserRouter>
