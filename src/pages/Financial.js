@@ -6,48 +6,55 @@ import {
 
 export default function Financial() {
   const financialCards = [
-    {
-      title: "Orçamentos",
-      description: "23 orçamentos criados",
-      badge: "Este mês",
-    },
+  {
+    title: "Orçamentos",
+    description: "Orçamentos gerados este mês",
+    value: "23",
+    badge: "+8% este mês",
+  },
 
-    {
-      title: "Ordens Pagas",
-      description: "18 ordens concluídas",
-      badge: "R$ 42.500",
-    },
+  {
+    title: "Ordens Pagas",
+    description: "OS finalizadas e recebidas",
+    value: "R$ 42.500",
+    badge: "18 concluídas",
+  },
 
-    {
-      title: "Aguardando Pagamento",
-      description: "6 ordens pendentes",
-      badge: "R$ 8.200",
-    },
+  {
+    title: "Aguardando Pagamento",
+    description: "Valores pendentes de recebimento",
+    value: "R$ 8.200",
+    badge: "6 ordens pendentes",
+  },
 
-    {
-      title: "Clientes Pendentes",
-      description: "4 clientes com débitos",
-      badge: "Cobrança necessária",
-    },
+  {
+    title: "Clientes Pendentes",
+    description: "Clientes com pagamentos em aberto",
+    value: "4",
+    badge: "Cobrança necessária",
+  },
 
-    {
-      title: "Faturamento Total",
-      description: "Receita acumulada",
-      badge: "R$ 78.900",
-    },
+  {
+    title: "Faturamento Total",
+    description: "Receita acumulada no período",
+    value: "R$ 78.900",
+    badge: "+12% vs mês anterior",
+  },
 
-    {
-      title: "Custos por OS",
-      description: "Peças e mão de obra",
-      badge: "R$ 21.300",
-    },
+  {
+    title: "Custos por OS",
+    description: "Peças, insumos e mão de obra",
+    value: "R$ 21.300",
+    badge: "Custos operacionais",
+  },
 
-    {
-      title: "Lucro",
-      description: "Resultado líquido",
-      badge: "R$ 57.600",
-    },
-  ]
+  {
+    title: "Lucro Líquido",
+    description: "Resultado após despesas",
+    value: "R$ 57.600",
+    badge: "Alta performance",
+  },
+]
 
   const summaryCards = [
     {

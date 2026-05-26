@@ -38,47 +38,56 @@ export const cardStyles = {
     bg-white
     p-6
     rounded-2xl
-    shadow-md
+    shadow-sm
     border
     border-gray-100
     flex
     flex-col
-    justify-between
     gap-4
     transition
-    hover:shadow-xl
+    hover:shadow-md
     hover:-translate-y-1
   `,
 
   title: `
-    text-xl
-    font-bold
+    text-lg
+    font-semibold
     text-gray-900
   `,
 
   description: `
-    text-gray-500
-    mt-2
     text-sm
+    text-gray-500
+  `,
+
+  value: `
+    text-3xl
+    font-bold
+    text-gray-900
   `,
 
   badge: `
+    inline-flex
+    w-fit
+    items-center
+    rounded-full
+    bg-blue-50
+    text-blue-600
     text-xs
-    text-blue-500
-    mt-2
     font-medium
+    px-3
+    py-1
   `,
 
   button: `
-    mt-6
-    bg-blue-500
-    hover:bg-blue-600
-    transition
+    w-full
+    bg-blue-600
+    hover:bg-blue-700
     text-white
     py-2
     px-4
     rounded-xl
-    w-full
+    transition
   `,
 }
 
