@@ -8,12 +8,6 @@ export default function NavMenu(props) {
 
   const [search, setSearch] = useState("")
 
-  function handleSearch(e) {
-    if (e.key === "Enter") {
-      navigate(`/search?q=${search}`)
-    }
-  }
-
   function signOut() {
     if (props.onSignOut) {
       props.onSignOut()
@@ -60,13 +54,15 @@ export default function NavMenu(props) {
         >
           Criar nova OS
         </span>
-        <button
+        
+      </div>
+      <div>
+      <button
           className={navStyles.signOut}
           onClick={signOut}>
           Sair
         </button>
-
-      </div>
+        </div>
     </nav>
   )
 }
