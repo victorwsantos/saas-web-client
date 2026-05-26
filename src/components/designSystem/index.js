@@ -82,10 +82,8 @@ export const cardStyles = {
   container: `
     w-full
     flex
-    flex-col
-    md:flex-row
-    md:items-center
-    md:justify-between
+    items-center
+    justify-between
     gap-4
     px-4
     py-4
@@ -102,6 +100,7 @@ export const cardStyles = {
   `,
 
   right: `
+    ml-auto
     flex
     items-center
   `,
@@ -113,7 +112,7 @@ export const cardStyles = {
     cursor-pointer
     font-medium
     text-sm
-    md:text-base
+    whitespace-nowrap
   `,
 
   activeLink: `
@@ -135,15 +134,15 @@ export const cardStyles = {
   `,
 
   signOut: `
-    w-full
-    md:w-auto
     bg-red-500
     hover:bg-red-600
     text-white
-    px-4
+    px-3
     py-2
     rounded-lg
     transition
+    text-sm
+    whitespace-nowrap
   `,
 }
 
