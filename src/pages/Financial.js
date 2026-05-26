@@ -4,81 +4,106 @@ import {
   dashboardStyles,
 } from "../components/designSystem"
 
+import {
+  Wallet,
+  BadgeDollarSign,
+  Clock3,
+  AlertCircle,
+  TrendingUp,
+  Wrench,
+  PiggyBank,
+} from "lucide-react"
+
 export default function Financial() {
   const financialCards = [
-  {
-    title: "Orçamentos",
-    description: "Orçamentos gerados este mês",
-    value: "23",
-    badge: "+8% este mês",
-  },
+    {
+      title: "Orçamentos",
+      description: "Orçamentos gerados este mês",
+      value: "23",
+      badge: "+8% este mês",
+      icon: Wallet,
+    },
 
-  {
-    title: "Ordens Pagas",
-    description: "OS finalizadas e recebidas",
-    value: "R$ 42.500",
-    badge: "18 concluídas",
-  },
+    {
+      title: "Ordens Pagas",
+      description: "OS finalizadas e recebidas",
+      value: "R$ 42.500",
+      badge: "18 concluídas",
+      icon: BadgeDollarSign,
+    },
 
-  {
-    title: "Aguardando Pagamento",
-    description: "Valores pendentes de recebimento",
-    value: "R$ 8.200",
-    badge: "6 ordens pendentes",
-  },
+    {
+      title: "Aguardando Pagamento",
+      description: "Valores pendentes de recebimento",
+      value: "R$ 8.200",
+      badge: "6 ordens pendentes",
+      icon: Clock3,
+    },
 
-  {
-    title: "Clientes Pendentes",
-    description: "Clientes com pagamentos em aberto",
-    value: "4",
-    badge: "Cobrança necessária",
-  },
+    {
+      title: "Clientes Pendentes",
+      description: "Clientes com pagamentos em aberto",
+      value: "4",
+      badge: "Cobrança necessária",
+      icon: AlertCircle,
+    },
 
-  {
-    title: "Faturamento Total",
-    description: "Receita acumulada no período",
-    value: "R$ 78.900",
-    badge: "+12% vs mês anterior",
-  },
+    {
+      title: "Faturamento Total",
+      description: "Receita acumulada no período",
+      value: "R$ 78.900",
+      badge: "+12% vs mês anterior",
+      icon: TrendingUp,
+    },
 
-  {
-    title: "Custos por OS",
-    description: "Peças, insumos e mão de obra",
-    value: "R$ 21.300",
-    badge: "Custos operacionais",
-  },
+    {
+      title: "Custos por OS",
+      description: "Peças, insumos e mão de obra",
+      value: "R$ 21.300",
+      badge: "Custos operacionais",
+      icon: Wrench,
+    },
 
-  {
-    title: "Lucro Líquido",
-    description: "Resultado após despesas",
-    value: "R$ 57.600",
-    badge: "Alta performance",
-  },
-]
+    {
+      title: "Lucro Líquido",
+      description: "Resultado após despesas",
+      value: "R$ 57.600",
+      badge: "Alta performance",
+      icon: PiggyBank,
+    },
+  ]
 
   const summaryCards = [
     {
       title: "Total Recebido",
       description: "Valor recebido no período",
-      badge: "R$ 78.900",
+      value: "R$ 78.900",
+      badge: "Receitas totais",
+      icon: BadgeDollarSign,
     },
 
     {
       title: "Total Gasto",
       description: "Custos operacionais",
-      badge: "R$ 21.300",
+      value: "R$ 21.300",
+      badge: "Despesas gerais",
+      icon: Wrench,
     },
 
     {
       title: "Lucro Líquido",
       description: "Resultado final",
-      badge: "R$ 57.600",
+      value: "R$ 57.600",
+      badge: "Excelente margem",
+      icon: PiggyBank,
     },
 
     {
       title: "Pendências",
       description: "Pagamentos aguardando",
-      badge: "R$ 8.200",
+      value: "R$ 8.200",
+      badge: "Necessita cobrança",
+      icon: Clock3,
     },
   ]
 
@@ -102,7 +127,10 @@ export default function Financial() {
             key={card.title}
             title={card.title}
             description={card.description}
-            badge={card.badge}
+            value={card.value}
+            hasBadge
+            badgeText={card.badge}
+            icon={card.icon}
           />
         ))}
       </div>
@@ -134,7 +162,10 @@ export default function Financial() {
               key={card.title}
               title={card.title}
               description={card.description}
-              badge={card.badge}
+              value={card.value}
+              hasBadge
+              badgeText={card.badge}
+              icon={card.icon}
             />
           ))}
         </div>
