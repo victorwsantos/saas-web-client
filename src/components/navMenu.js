@@ -50,6 +50,12 @@ export default function NavMenu(props) {
         </span>
         <span
           className={navStyles.link}
+          onClick={() => navigate("/financial")}
+        >
+          Financeiro
+        </span>
+        <span
+          className={navStyles.link}
           onClick={() => navigate("/orders/create")}
         >
           Criar nova OS

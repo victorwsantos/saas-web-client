@@ -16,6 +16,7 @@ import OrderDetails from "../pages/OrderDetails"
 import Search from "../pages/Search"
 import MainPage from "../pages/MainPage"
 import CreateOrder from "../pages/CreateOrder"
+import Financial from "../pages/Financial"
 
 export default function AppRoutes() {
   return (
@@ -69,6 +70,11 @@ export default function AppRoutes() {
           <Route
             path="/search"
             element={<Search />}
+          />
+        </Route>
+        <Route
+            path="/financial"
+            element={<Financial />}
           />
         </Route>
 
