@@ -5,7 +5,8 @@ export const dashboardStyles = {
   container: `
     min-h-screen
     bg-gray-100
-    p-6
+    p-4
+    md:p-6
   `,
 
   headerTitle: `
@@ -17,7 +18,9 @@ export const dashboardStyles = {
   cardsContainer: `
     grid
     grid-cols-1
-    md:grid-cols-4
+    sm:grid-cols-2
+    lg:grid-cols-3
+    xl:grid-cols-4
     gap-4
     mt-6
   `,
@@ -41,6 +44,10 @@ export const cardStyles = {
     flex
     flex-col
     justify-between
+    gap-4
+    transition
+    hover:shadow-xl
+    hover:-translate-y-1
   `,
 
   title: `
@@ -78,10 +85,11 @@ export const cardStyles = {
 // =========================
 // NAVBAR
 // =========================
- export const navStyles = {
+export const navStyles = {
   container: `
     w-full
     flex
+    flex-wrap
     items-center
     justify-between
     gap-4
@@ -122,6 +130,7 @@ export const cardStyles = {
 
   searchInput: `
     w-full
+    max-w-full
     md:w-80
     border
     border-gray-200
@@ -146,22 +155,44 @@ export const cardStyles = {
   `,
 }
 
+// =========================
+// FINANCIAL
+// =========================
+export const financialStyles = {
+  sectionTitle: `
+    text-2xl
+    font-bold
+    text-gray-900
+  `,
+
+  summaryGrid: `
+    mt-6
+    grid
+    grid-cols-1
+    md:grid-cols-2
+    lg:grid-cols-4
+    gap-4
+  `,
+}
 
 // =========================
 // ORDERS PAGE
 // =========================
 export const orderPageStyles = {
   container: `
-    p-6
+    p-4
+    md:p-6
   `,
 
   headerTitle: `
     text-3xl
     font-bold
+    text-gray-900
   `,
 
   filtersContainer: `
     flex
+    flex-wrap
     gap-3
     mt-4
   `,
@@ -169,7 +200,8 @@ export const orderPageStyles = {
   select: `
     border
     p-2
-    rounded
+    rounded-lg
+    bg-white
   `,
 
   list: `
@@ -183,15 +215,18 @@ export const orderPageStyles = {
     p-4
     bg-white
     border
+    border-gray-100
     rounded-xl
     cursor-pointer
     hover:bg-gray-50
+    hover:shadow-md
     transition
   `,
 
   orderTitle: `
     text-lg
     font-semibold
+    text-gray-900
   `,
 
   text: `
@@ -201,6 +236,7 @@ export const orderPageStyles = {
   status: `
     text-sm
     mt-1
+    font-medium
   `,
 }
 
@@ -209,7 +245,8 @@ export const orderPageStyles = {
 // =========================
 export const searchStyles = {
   container: `
-    p-6
+    p-4
+    md:p-6
   `,
 
   input: `
@@ -232,16 +269,19 @@ export const searchStyles = {
   card: `
     p-4
     border
+    border-gray-100
     rounded-xl
     bg-white
     cursor-pointer
     hover:bg-gray-50
+    hover:shadow-md
     transition
   `,
 
   title: `
     font-semibold
     text-lg
+    text-gray-900
   `,
 
   subtitle: `
@@ -255,7 +295,8 @@ export const searchStyles = {
 // =========================
 export const orderDetailsStyles = {
   container: `
-    p-6
+    p-4
+    md:p-6
     flex
     flex-col
     gap-4
@@ -340,5 +381,59 @@ export const orderListStyles = {
     font-medium
     mt-2
     text-blue-600
+  `,
+}
+
+// =========================
+// FORM
+// =========================
+export const formStyles = {
+  container: `
+    max-w-4xl
+    mx-auto
+    bg-white
+    rounded-2xl
+    shadow-sm
+    border
+    border-gray-100
+    p-6
+  `,
+
+  form: `
+    flex
+    flex-col
+    gap-6
+  `,
+
+  title: `
+    text-3xl
+    font-bold
+    text-gray-900
+  `,
+
+  description: `
+    text-gray-500
+  `,
+
+  input: `
+    w-full
+    border
+    border-gray-200
+    rounded-xl
+    px-4
+    py-3
+    outline-none
+    focus:ring-2
+    focus:ring-blue-200
+  `,
+
+  submitButton: `
+    bg-blue-600
+    hover:bg-blue-700
+    text-white
+    py-3
+    rounded-xl
+    transition
+    mt-4
   `,
 }

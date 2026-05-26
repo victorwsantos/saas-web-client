@@ -2,7 +2,6 @@ import Card from "../../components/card"
 
 import {
   dashboardStyles,
-  cardStyles,
 } from "../../components/designSystem"
 
 export default function Financial() {
@@ -76,22 +75,6 @@ export default function Financial() {
     },
   ]
 
-  function renderCard(card) {
-    return (
-      <Card
-        key={card.title}
-        className={cardStyles.container}
-        titleClassName={cardStyles.title}
-        descriptionClassName={cardStyles.description}
-        badgeClassName={cardStyles.badge}
-        hasBadge
-        badgeText={card.badge}
-        title={card.title}
-        description={card.description}
-      />
-    )
-  }
-
   return (
     <div className={dashboardStyles.container}>
       {/* HEADER */}
@@ -105,9 +88,16 @@ export default function Financial() {
         </p>
       </div>
 
-      {/* KPI */}
+      {/* KPI CARDS */}
       <div className={dashboardStyles.cardsContainer}>
-        {financialCards.map(renderCard)}
+        {financialCards.map((card) => (
+          <Card
+            key={card.title}
+            title={card.title}
+            description={card.description}
+            badge={card.badge}
+          />
+        ))}
       </div>
 
       {/* SUMMARY */}
@@ -132,7 +122,14 @@ export default function Financial() {
             gap-4
           "
         >
-          {summaryCards.map(renderCard)}
+          {summaryCards.map((card) => (
+            <Card
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              badge={card.badge}
+            />
+          ))}
         </div>
       </div>
     </div>
