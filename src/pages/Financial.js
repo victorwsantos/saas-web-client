@@ -1,8 +1,8 @@
-import Card from "../../components/ui/card"
+import Card from "../components/ui/card"
 
 import {
   dashboardStyles,
-} from "../../components/designSystem"
+} from "../components/designSystem"
 
 export default function Financial() {
   const financialCards = [

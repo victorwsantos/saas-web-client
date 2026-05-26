@@ -1,12 +1,9 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
 
 import { navStyles } from "./designSystem"
 
 export default function NavMenu(props) {
   const navigate = useNavigate()
-
-  const [search, setSearch] = useState("")
 
   function signOut() {
     if (props.onSignOut) {
