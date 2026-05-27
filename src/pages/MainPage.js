@@ -1,39 +1,146 @@
-import Card from "../components/ui/card"
-import OrderList from "../components/orderList"
+import {
+  ClipboardList,
+  Clock3,
+  Wrench,
+  CheckCircle2,
+} from "lucide-react"
+
+import Dashboard from "../components/dashboard"
 
 import {
-  dashboardStyles,
+  pageStyles,
+  cardStyles,
 } from "../components/designSystem"
 
-export default function Dashboard(props) {
-  return (
-    <div className="flex flex-col gap-8">
-      {/* CARDS */}
-      <div
-        className={
-          dashboardStyles.cardsContainer
-        }
-      >
-        {props.cards.map((card) => (
-          <Card
-            key={card.title}
-            title={card.title}
-            description={card.description}
-            value={String(card.value)}
-            hasBadge={card.hasBadge}
-            badgeText={card.badgeText}
-            buttonText={card.buttonText}
-            onClick={card.onClick}
-            icon={card.icon}
-            className={card.className}
-          />
-        ))}
-      </div>
+export default function MainPage() {
+  const cards = [
+    {
+      title: "Ordens do Dia",
+      description: "OS programadas para hoje",
+      value: "12",
+      badgeText: "3 urgentes",
+      hasBadge: true,
+      buttonText: "Ver ordens",
+      icon: ClipboardList,
+      className: cardStyles.container,
 
-      {/* ORDERS */}
-      <OrderList
-        orders={props.orders}
-      />
+      onClick: () => {
+        window.location.href =
+          "/search?filter=today"
+      },
+    },
+
+    {
+      title: "Aguardando Aprovação",
+      description: "Orçamentos enviados",
+      value: "5",
+      badgeText: "R$ 18.400 em orçamento",
+      hasBadge: true,
+      buttonText: "Ver aprovações",
+      icon: Clock3,
+      className: cardStyles.container,
+
+      onClick: () => {
+        window.location.href =
+          "/search?filter=waiting-approval"
+      },
+    },
+
+    {
+      title: "Em Andamento",
+      description: "Ordens em execução",
+      value: "8",
+      badgeText: "4 motores desmontados",
+      hasBadge: true,
+      buttonText: "Ver andamento",
+      icon: Wrench,
+      className: cardStyles.container,
+
+      onClick: () => {
+        window.location.href =
+          "/search?filter=in-progress"
+      },
+    },
+
+    {
+      title: "Finalizadas",
+      description: "OS concluídas",
+      value: "18",
+      badgeText: "R$ 42.500 faturados",
+      hasBadge: true,
+      buttonText: "Ver finalizadas",
+      icon: CheckCircle2,
+      className: cardStyles.container,
+
+      onClick: () => {
+        window.location.href =
+          "/search?filter=finished"
+      },
+    },
+  ]
+
+  const orders = [
+    {
+      id: 1,
+      client: "João Silva",
+      vehicle: "Honda Civic",
+      service: "Retífica completa",
+      status: "Em andamento",
+    },
+
+    {
+      id: 2,
+      client: "Maria Oliveira",
+      vehicle: "Toyota Corolla",
+      service: "Troca de junta",
+      status: "Aguardando aprovação",
+    },
+
+    {
+      id: 3,
+      client: "Carlos Souza",
+      vehicle: "Gol 1.6",
+      service: "Revisão do cabeçote",
+      status: "Finalizada",
+    },
+
+    {
+      id: 4,
+      client: "Fernanda Lima",
+      vehicle: "Onix Turbo",
+      service: "Troca de pistão",
+      status: "Ordens do dia",
+    },
+
+    {
+      id: 5,
+      client: "Ricardo Alves",
+      vehicle: "Hilux",
+      service: "Troca de bronzina",
+      status: "Em andamento",
+    },
+  ]
+
+  return (
+    <div className={pageStyles.container}>
+      <div className={pageStyles.layout}>
+        {/* HEADER */}
+        <div>
+          <h1 className={pageStyles.headerTitle}>
+            Dashboard
+          </h1>
+
+          <p className={pageStyles.subtitle}>
+            Controle geral da oficina
+          </p>
+        </div>
+
+        {/* DASHBOARD */}
+        <Dashboard
+          cards={cards}
+          orders={orders}
+        />
+      </div>
     </div>
   )
 }
