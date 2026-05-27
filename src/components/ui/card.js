@@ -7,6 +7,8 @@ import {
 } from "../designSystem"
 
 export default function Card(props) {
+  const Icon = props.icon
+
   return (
     <div
       className={
@@ -14,6 +16,22 @@ export default function Card(props) {
         cardStyles.container
       }
     >
+      {/* ICON */}
+      {Icon && (
+        <div
+          className={
+            cardStyles.iconContainer
+          }
+        >
+          <Icon
+            className={
+              cardStyles.icon
+            }
+            size={24}
+          />
+        </div>
+      )}
+
       {/* HEADER */}
       <div className="flex flex-col gap-1">
         <Title

@@ -1,12 +1,28 @@
 // =========================
-// DASHBOARD
+// PAGE
 // =========================
-export const dashboardStyles = {
+export const pageStyles = {
   container: `
     min-h-screen
     bg-gray-100
     p-4
     md:p-6
+  `,
+
+  layout: `
+    flex
+    flex-col
+    gap-8
+  `,
+
+  section: `
+    mt-10
+  `,
+
+  sectionTitle: `
+    text-2xl
+    font-bold
+    text-gray-900
   `,
 
   headerTitle: `
@@ -15,13 +31,27 @@ export const dashboardStyles = {
     text-gray-900
   `,
 
+  subtitle: `
+    text-gray-500
+    mt-2
+  `,
+}
+
+// =========================
+// DASHBOARD
+// =========================
+export const dashboardStyles = {
+  layout: `
+    flex
+    flex-col
+    gap-8
+  `,
+
   cardsContainer: `
     grid
     grid-cols-1
-    sm:grid-cols-2
-    lg:grid-cols-3
-    xl:grid-cols-4
-    gap-4
+    md:grid-cols-2
+    gap-6
     mt-6
   `,
 
@@ -41,12 +71,27 @@ export const cardStyles = {
     shadow-sm
     border
     border-gray-100
+    min-h-[260px]
     flex
     flex-col
-    gap-4
+    justify-between
+    gap-5
     transition
     hover:shadow-md
     hover:-translate-y-1
+  `,
+
+  header: `
+    flex
+    items-start
+    justify-between
+    gap-4
+  `,
+
+  content: `
+    flex
+    flex-col
+    gap-4
   `,
 
   title: `
@@ -64,6 +109,7 @@ export const cardStyles = {
     text-3xl
     font-bold
     text-gray-900
+    tracking-tight
   `,
 
   badge: `
@@ -71,8 +117,8 @@ export const cardStyles = {
     w-fit
     items-center
     rounded-full
-    bg-blue-50
-    text-blue-600
+    bg-blue-100/70
+    text-blue-700
     text-xs
     font-medium
     px-3
@@ -83,38 +129,12 @@ export const cardStyles = {
     w-full
     bg-blue-600
     hover:bg-blue-700
+    active:scale-[0.98]
     text-white
-    py-2
+    py-2.5
     px-4
     rounded-xl
     transition
-  `,
-}
-// =========================
-// MAIN PAGE
-// =========================
-export const mainPageStyles = {
-  grid: `
-    grid
-    grid-cols-1
-    lg:grid-cols-2
-    gap-6
-  `,
-
-  dashboardCard: `
-    bg-white
-    border
-    border-gray-100
-    rounded-2xl
-    p-6
-    shadow-sm
-    flex
-    flex-col
-    justify-between
-    gap-6
-    transition
-    hover:shadow-md
-    hover:-translate-y-1
   `,
 
   iconContainer: `
@@ -125,13 +145,13 @@ export const mainPageStyles = {
     flex
     items-center
     justify-center
+    shrink-0
   `,
 
   icon: `
     text-blue-600
   `,
 }
-
 
 // =========================
 // NAVBAR
@@ -196,6 +216,7 @@ export const navStyles = {
   signOut: `
     bg-red-500
     hover:bg-red-600
+    active:scale-[0.98]
     text-white
     px-3
     py-2
@@ -221,8 +242,7 @@ export const financialStyles = {
     grid
     grid-cols-1
     md:grid-cols-2
-    lg:grid-cols-4
-    gap-4
+    gap-6
   `,
 }
 
@@ -250,6 +270,7 @@ export const orderPageStyles = {
 
   select: `
     border
+    border-gray-200
     p-2
     rounded-lg
     bg-white
@@ -303,6 +324,7 @@ export const searchStyles = {
   input: `
     w-full
     border
+    border-gray-200
     rounded-lg
     p-3
     mb-6
@@ -481,6 +503,7 @@ export const formStyles = {
   submitButton: `
     bg-blue-600
     hover:bg-blue-700
+    active:scale-[0.98]
     text-white
     py-3
     rounded-xl
