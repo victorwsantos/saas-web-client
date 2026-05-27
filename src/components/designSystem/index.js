@@ -90,6 +90,48 @@ export const cardStyles = {
     transition
   `,
 }
+// =========================
+// MAIN PAGE
+// =========================
+export const mainPageStyles = {
+  grid: `
+    grid
+    grid-cols-1
+    lg:grid-cols-2
+    gap-6
+  `,
+
+  dashboardCard: `
+    bg-white
+    border
+    border-gray-100
+    rounded-2xl
+    p-6
+    shadow-sm
+    flex
+    flex-col
+    justify-between
+    gap-6
+    transition
+    hover:shadow-md
+    hover:-translate-y-1
+  `,
+
+  iconContainer: `
+    w-14
+    h-14
+    rounded-2xl
+    bg-blue-50
+    flex
+    items-center
+    justify-center
+  `,
+
+  icon: `
+    text-blue-600
+  `,
+}
+
 
 // =========================
 // NAVBAR

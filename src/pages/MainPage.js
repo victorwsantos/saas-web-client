@@ -1,4 +1,15 @@
+import {
+  ClipboardList,
+  Clock3,
+  Wrench,
+  CheckCircle2,
+} from "lucide-react"
+
 import Dashboard from "../components/dashboard"
+
+import {
+  mainPageStyles,
+} from "../components/designSystem"
 
 export default function MainPage() {
   const cards = [
@@ -7,8 +18,12 @@ export default function MainPage() {
       value: 12,
       description: "OS programadas para hoje",
       buttonText: "Ver ordens",
+      icon: ClipboardList,
+      className: mainPageStyles.dashboardCard,
+
       onClick: () => {
-        window.location.href = "/search?filter=today"
+        window.location.href =
+          "/search?filter=today"
       },
     },
 
@@ -17,6 +32,9 @@ export default function MainPage() {
       value: 5,
       description: "Orçamentos enviados",
       buttonText: "Ver aprovações",
+      icon: Clock3,
+      className: mainPageStyles.dashboardCard,
+
       onClick: () => {
         window.location.href =
           "/search?filter=waiting-approval"
@@ -28,6 +46,9 @@ export default function MainPage() {
       value: 8,
       description: "Ordens em execução",
       buttonText: "Ver andamento",
+      icon: Wrench,
+      className: mainPageStyles.dashboardCard,
+
       onClick: () => {
         window.location.href =
           "/search?filter=in-progress"
@@ -39,6 +60,9 @@ export default function MainPage() {
       value: 18,
       description: "OS concluídas",
       buttonText: "Ver finalizadas",
+      icon: CheckCircle2,
+      className: mainPageStyles.dashboardCard,
+
       onClick: () => {
         window.location.href =
           "/search?filter=finished"
@@ -81,9 +105,11 @@ export default function MainPage() {
   ]
 
   return (
-    <Dashboard
-      cards={cards}
-      orders={orders}
-    />
+    <div className={mainPageStyles.grid}>
+      <Dashboard
+        cards={cards}
+        orders={orders}
+      />
+    </div>
   )
 }
