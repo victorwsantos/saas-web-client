@@ -1,9 +1,9 @@
-import Card from "./ui/card"
-import OrderList from "./orderList"
+import Card from "../components/ui/card"
+import OrderList from "../components/orderList"
 
 import {
   dashboardStyles,
-} from "./designSystem"
+} from "../components/designSystem"
 
 export default function Dashboard(props) {
   return (
