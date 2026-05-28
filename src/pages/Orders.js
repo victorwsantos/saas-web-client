@@ -14,7 +14,7 @@ export default function OrdersPage() {
   const [sort, setSort] = useState("desc")
 // src/mocks/orders.js
 
-export const ordersMock = [
+const ordersMock = [
   {
     id: 1001,
     client: "João Silva",
@@ -69,7 +69,7 @@ export const ordersMock = [
   useEffect(() => {
     async function loadOrders() {
       const data = await getOrders()
-      setOrders(data || ordersMock)
+      setOrders(ordersMock)
     }
 
     loadOrders()
