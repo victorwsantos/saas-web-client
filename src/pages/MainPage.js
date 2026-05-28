@@ -26,7 +26,7 @@ export default function MainPage() {
 
       onClick: () => {
         window.location.href =
-          "/search?filter=today"
+          "/orders?filter=today"
       },
     },
 
@@ -42,7 +42,7 @@ export default function MainPage() {
 
       onClick: () => {
         window.location.href =
-          "/search?filter=waiting-approval"
+          "/orders?filter=waiting-approval"
       },
     },
 
@@ -58,7 +58,7 @@ export default function MainPage() {
 
       onClick: () => {
         window.location.href =
-          "/search?filter=in-progress"
+          "/orders?filter=in-progress"
       },
     },
 
@@ -74,7 +74,7 @@ export default function MainPage() {
 
       onClick: () => {
         window.location.href =
-          "/search?filter=finished"
+          "/orders?filter=finished"
       },
     },
   ]

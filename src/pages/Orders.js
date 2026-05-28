@@ -6,6 +6,7 @@ import {
 
 import {
   useNavigate,
+  useSearchParams,
 } from "react-router-dom"
 
 import Title from "../components/ui/title"
@@ -21,9 +22,10 @@ const ordersMock = [
     client: "João Silva",
     service: "Troca de óleo e filtro",
     price: 250,
-    status: "approved",
+    status: "today",
     createdAt: "2026-05-25T10:30:00",
   },
+
   {
     id: 1002,
     client: "Maria Oliveira",
@@ -32,6 +34,7 @@ const ordersMock = [
     status: "pending",
     createdAt: "2026-05-24T15:45:00",
   },
+
   {
     id: 1003,
     client: "Carlos Souza",
@@ -40,14 +43,16 @@ const ordersMock = [
     status: "finished",
     createdAt: "2026-05-20T08:15:00",
   },
+
   {
     id: 1004,
     client: "Fernanda Costa",
     service: "Troca de embreagem",
     price: 2200,
-    status: "approved",
+    status: "in-progress",
     createdAt: "2026-05-21T14:20:00",
   },
+
   {
     id: 1005,
     client: "Ricardo Mendes",
@@ -56,6 +61,7 @@ const ordersMock = [
     status: "pending",
     createdAt: "2026-05-23T11:10:00",
   },
+
   {
     id: 1006,
     client: "Juliana Lima",
@@ -67,11 +73,23 @@ const ordersMock = [
 ]
 
 export default function OrdersPage() {
-  const [orders, setOrders] = useState([])
-  const [query, setQuery] = useState("")
+  const [searchParams] =
+    useSearchParams()
+
+  const filterFromUrl =
+    searchParams.get("filter")
+
+  const [orders, setOrders] =
+    useState([])
+
+  const [query, setQuery] =
+    useState("")
+
   const [statusFilter, setStatusFilter] =
-    useState("all")
-  const [sort, setSort] = useState("desc")
+    useState(filterFromUrl || "all")
+
+  const [sort, setSort] =
+    useState("desc")
 
   const navigate = useNavigate()
 
@@ -83,25 +101,31 @@ export default function OrdersPage() {
     let result = [...orders]
 
     if (query.trim()) {
-      const search = query.toLowerCase()
+      const search =
+        query.toLowerCase()
 
-      result = result.filter((order) => {
-        return (
-          order.client
-            .toLowerCase()
-            .includes(search) ||
-          order.service
-            .toLowerCase()
-            .includes(search) ||
-          String(order.id).includes(search)
-        )
-      })
+      result = result.filter(
+        (order) => {
+          return (
+            order.client
+              .toLowerCase()
+              .includes(search) ||
+            order.service
+              .toLowerCase()
+              .includes(search) ||
+            String(order.id).includes(
+              search
+            )
+          )
+        }
+      )
     }
 
     if (statusFilter !== "all") {
       result = result.filter(
         (order) =>
-          order.status === statusFilter
+          order.status ===
+          statusFilter
       )
     }
 
@@ -110,9 +134,8 @@ export default function OrdersPage() {
         a.createdAt
       )
 
-      const secondDate = new Date(
-        b.createdAt
-      )
+      const secondDate =
+        new Date(b.createdAt)
 
       return sort === "desc"
         ? secondDate - firstDate
@@ -127,8 +150,32 @@ export default function OrdersPage() {
     sort,
   ])
 
+  function getStatusLabel(status) {
+    if (status === "today") {
+      return "Ordens do dia"
+    }
+
+    if (status === "pending") {
+      return "Pendente"
+    }
+
+    if (status === "in-progress") {
+      return "Em andamento"
+    }
+
+    if (status === "finished") {
+      return "Finalizada"
+    }
+
+    return status
+  }
+
   return (
-    <div className={orderPageStyles.container}>
+    <div
+      className={
+        orderPageStyles.container
+      }
+    >
       <Title
         className={
           orderPageStyles.headerTitle
@@ -170,12 +217,16 @@ serviço ou OS...
             Todas
           </option>
 
-          <option value="approved">
-            Aprovadas
+          <option value="today">
+            Ordens do dia
           </option>
 
           <option value="pending">
             Pendentes
+          </option>
+
+          <option value="in-progress">
+            Em andamento
           </option>
 
           <option value="finished">
@@ -207,47 +258,51 @@ serviço ou OS...
           orderPageStyles.list
         }
       >
-        {filteredOrders.map((order) => (
-          <div
-            key={order.id}
-            className={
-              orderPageStyles.card
-            }
-            onClick={() =>
-              navigate(
-                `/orders/${order.id}`
-              )
-            }
-          >
-            <Title
+        {filteredOrders.map(
+          (order) => (
+            <div
+              key={order.id}
               className={
-                orderPageStyles.orderTitle
+                orderPageStyles.card
               }
-              text={`OS #${order.id}`}
-            />
+              onClick={() =>
+                navigate(
+                  `/orders/${order.id}`
+                )
+              }
+            >
+              <Title
+                className={
+                  orderPageStyles.orderTitle
+                }
+                text={`OS #${order.id}`}
+              />
 
-            <Text
-              className={
-                orderPageStyles.text
-              }
-              text={order.service}
-            />
+              <Text
+                className={
+                  orderPageStyles.text
+                }
+                text={order.service}
+              />
 
-            <Text
-              className={
-                orderPageStyles.text
-              }
-              text={order.client}
-            />
+              <Text
+                className={
+                  orderPageStyles.text
+                }
+                text={order.client}
+              />
 
-            <Text
-              className={
-                orderPageStyles.status
-              }
-              text={`Status: ${order.status}`}
-            />
-          </div>
-        ))}
+              <Text
+                className={
+                  orderPageStyles.status
+                }
+                text={`Status: ${getStatusLabel(
+                  order.status
+                )}`}
+              />
+            </div>
+          )
+        )}
       </div>
     </div>
   )
