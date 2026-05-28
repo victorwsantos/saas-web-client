@@ -1,10 +1,19 @@
-import { useEffect, useMemo, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import {
+  useEffect,
+  useMemo,
+  useState,
+} from "react"
+
+import {
+  useNavigate,
+} from "react-router-dom"
 
 import Title from "../components/ui/title"
 import Text from "../components/ui/subtitle"
 
-import { orderPageStyles } from "../components/designSystem"
+import {
+  orderPageStyles,
+} from "../components/designSystem"
 
 const ordersMock = [
   {
@@ -59,7 +68,9 @@ const ordersMock = [
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([])
-  const [statusFilter, setStatusFilter] = useState("all")
+  const [query, setQuery] = useState("")
+  const [statusFilter, setStatusFilter] =
+    useState("all")
   const [sort, setSort] = useState("desc")
 
   const navigate = useNavigate()
@@ -71,15 +82,37 @@ export default function OrdersPage() {
   const filteredOrders = useMemo(() => {
     let result = [...orders]
 
+    if (query.trim()) {
+      const search = query.toLowerCase()
+
+      result = result.filter((order) => {
+        return (
+          order.client
+            .toLowerCase()
+            .includes(search) ||
+          order.service
+            .toLowerCase()
+            .includes(search) ||
+          String(order.id).includes(search)
+        )
+      })
+    }
+
     if (statusFilter !== "all") {
       result = result.filter(
-        (order) => order.status === statusFilter
+        (order) =>
+          order.status === statusFilter
       )
     }
 
     result.sort((a, b) => {
-      const firstDate = new Date(a.createdAt)
-      const secondDate = new Date(b.createdAt)
+      const firstDate = new Date(
+        a.createdAt
+      )
+
+      const secondDate = new Date(
+        b.createdAt
+      )
 
       return sort === "desc"
         ? secondDate - firstDate
@@ -87,21 +120,50 @@ export default function OrdersPage() {
     })
 
     return result
-  }, [orders, statusFilter, sort])
+  }, [
+    orders,
+    query,
+    statusFilter,
+    sort,
+  ])
 
   return (
     <div className={orderPageStyles.container}>
       <Title
-        className={orderPageStyles.headerTitle}
+        className={
+          orderPageStyles.headerTitle
+        }
         text="Ordens de Serviço"
       />
 
-      <div className={orderPageStyles.filtersContainer}>
+      <input
+        className={
+          orderPageStyles.select
+        }
+        placeholder="
+Buscar cliente,
+serviço ou OS...
+        "
+        value={query}
+        onChange={(e) =>
+          setQuery(e.target.value)
+        }
+      />
+
+      <div
+        className={
+          orderPageStyles.filtersContainer
+        }
+      >
         <select
-          className={orderPageStyles.select}
+          className={
+            orderPageStyles.select
+          }
           value={statusFilter}
           onChange={(e) =>
-            setStatusFilter(e.target.value)
+            setStatusFilter(
+              e.target.value
+            )
           }
         >
           <option value="all">
@@ -122,7 +184,9 @@ export default function OrdersPage() {
         </select>
 
         <select
-          className={orderPageStyles.select}
+          className={
+            orderPageStyles.select
+          }
           value={sort}
           onChange={(e) =>
             setSort(e.target.value)
@@ -138,27 +202,48 @@ export default function OrdersPage() {
         </select>
       </div>
 
-      <div className={orderPageStyles.list}>
+      <div
+        className={
+          orderPageStyles.list
+        }
+      >
         {filteredOrders.map((order) => (
           <div
             key={order.id}
-            className={orderPageStyles.card}
+            className={
+              orderPageStyles.card
+            }
             onClick={() =>
-              navigate(`/orders/${order.id}`)
+              navigate(
+                `/orders/${order.id}`
+              )
             }
           >
             <Title
-              className={orderPageStyles.orderTitle}
+              className={
+                orderPageStyles.orderTitle
+              }
               text={`OS #${order.id}`}
             />
 
             <Text
-              className={orderPageStyles.text}
+              className={
+                orderPageStyles.text
+              }
               text={order.service}
             />
 
             <Text
-              className={orderPageStyles.status}
+              className={
+                orderPageStyles.text
+              }
+              text={order.client}
+            />
+
+            <Text
+              className={
+                orderPageStyles.status
+              }
               text={`Status: ${order.status}`}
             />
           </div>

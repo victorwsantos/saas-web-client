@@ -27,13 +27,6 @@ export default function NavMenu(props) {
 
         <span
           className={navStyles.link}
-          onClick={() => navigate("/search")}
-        >
-          Pesquisa
-        </span>
-
-        <span
-          className={navStyles.link}
           onClick={() => navigate("/clients")}
         >
           Clientes
