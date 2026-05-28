@@ -74,9 +74,9 @@ export default function OrdersList(props) {
                 text={`Valor: R$ ${order.price}`}
               />
            </div>
-         /</div>
+         </div>
         ))}
-     /</div>
-   /</div>
+     </div>
+   </div>
   )
 }

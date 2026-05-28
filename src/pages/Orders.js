@@ -12,13 +12,64 @@ export default function OrdersPage() {
   const [orders, setOrders] = useState([])
   const [statusFilter, setStatusFilter] = useState("all")
   const [sort, setSort] = useState("desc")
+// src/mocks/orders.js
 
+export const ordersMock = [
+  {
+    id: 1001,
+    client: "João Silva",
+    service: "Troca de óleo e filtro",
+    price: 250,
+    status: "approved",
+    createdAt: "2026-05-25T10:30:00",
+  },
+  {
+    id: 1002,
+    client: "Maria Oliveira",
+    service: "Retífica de motor",
+    price: 4800,
+    status: "pending",
+    createdAt: "2026-05-24T15:45:00",
+  },
+  {
+    id: 1003,
+    client: "Carlos Souza",
+    service: "Alinhamento e balanceamento",
+    price: 180,
+    status: "finished",
+    createdAt: "2026-05-20T08:15:00",
+  },
+  {
+    id: 1004,
+    client: "Fernanda Costa",
+    service: "Troca de embreagem",
+    price: 2200,
+    status: "approved",
+    createdAt: "2026-05-21T14:20:00",
+  },
+  {
+    id: 1005,
+    client: "Ricardo Mendes",
+    service: "Revisão completa",
+    price: 1350,
+    status: "pending",
+    createdAt: "2026-05-23T11:10:00",
+  },
+  {
+    id: 1006,
+    client: "Juliana Lima",
+    service: "Troca de pastilhas de freio",
+    price: 420,
+    status: "finished",
+    createdAt: "2026-05-18T17:00:00",
+  },
+]
   const navigate = useNavigate()
 
   useEffect(() => {
     async function loadOrders() {
       const data = await getOrders()
-      setOrders(data)
+      setOrders(data || ordersMock)
     }
 
     loadOrders()
